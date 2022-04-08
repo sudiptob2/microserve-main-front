@@ -33,5 +33,24 @@ export class DashboardComponent implements OnInit {
       );
   }
 
+  likeProduct(id: number) {
+    console.log('like clicked ...........');
+    this.dashboardService.likeProduct(id)
+      .pipe(first())
+      .subscribe(
+        data => {
+          this.products.forEach(product => {
+            if (product.id == data.id) {
+              product.likes = data.likes;
+            }
+          });
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        }
+      );
+  }
+
 }
 

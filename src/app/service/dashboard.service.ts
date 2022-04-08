@@ -22,4 +22,12 @@ export class DashboardService {
         catchError(this.handleError('getToDo', []))
       );
   }
+
+  likeProduct(id: number): Observable<any> {
+    return this.http.post<any>(this.apiUrl + `/api/products/${id}/like`, null)
+      .pipe(
+        catchError(this.handleError('like'))
+      );
+  }
+
 }
