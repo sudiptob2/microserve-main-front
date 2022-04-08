@@ -10,4 +10,4 @@ services:
       - .:/app
     command: >
       bash -c "cp -rfu /cache/node_modules/. /app/node_modules/
-      && ng serve --host=0.0.0.0"
+      && ng serve --host=0.0.0.0 --aot"
