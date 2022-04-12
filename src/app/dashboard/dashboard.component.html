@@ -1,13 +1,16 @@
-<div *ngFor="let p of products">
-  <mat-card class="example-card">
-    <mat-card-title>{{ p.title }}</mat-card-title>
-    <mat-card-content>
-      <img src="{{ p.image }}" height="180" />
-      Likes {{ p.likes }}
-    </mat-card-content>
-
-    <mat-card-actions>
-      <button mat-button (click)="likeProduct(p.id)">LIKE</button>
-    </mat-card-actions>
-  </mat-card>
+<div class="product-card-wrapper">
+  <div class="card" *ngFor="let p of products">
+    <mat-card class="example-card">
+      <mat-card-title style="margin-bottom: 15px; font-size: 18px;">{{ p.title }}</mat-card-title>
+      <mat-card-content style="margin-bottom: 0;">
+        <img  src="{{ p.image }}" height="180" />
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="likeProduct(p.id)" style="display: flex; align-items: center;">
+          <mat-icon aria-hidden="false" aria-label="Example home icon">thumb_up</mat-icon> 
+          <span style="margin-left: 10px;">{{ p.likes }}</span>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>  
 </div>

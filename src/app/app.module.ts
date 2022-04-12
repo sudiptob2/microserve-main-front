@@ -10,7 +10,7 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { HttpErrorHandler } from './service/http-error-handler.service';
 import { MessageService } from './service/message.service';
-
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +23,7 @@ import { MessageService } from './service/message.service';
     BrowserAnimationsModule,
     MatInputModule,
     MatButtonModule,
+    MatIconModule,
     MatCardModule
   ],
   providers: [
